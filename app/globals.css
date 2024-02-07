@@ -59,6 +59,10 @@ body {
   @apply font-BCSans;
 }
 
+.bg-bcblue {
+  @apply bg-primary-bc-blue;
+}
+
 .max-width {
   @apply max-w-[1440px] mx-auto;
 }
