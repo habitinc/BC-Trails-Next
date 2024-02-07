@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 import "./globals.css";
+import { TopBar } from "@/components";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-hidden">
+      <TopBar />
+      <main className="flex justify-center items-center flex-1 pb-20 w-auto overflow-hidden flex-col bg-bcwhite">
 
-      <body className="flex justify-center items-center flex-1 pt-24 pb-20 w-auto overflow-hidden flex-col">
         {children}
-      </body>
+      </main>
     </html>
   );
 }

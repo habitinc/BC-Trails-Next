@@ -63,6 +63,10 @@ body {
   @apply bg-primary-bc-blue;
 }
 
+.bg-bcwhite {
+  @apply bg-primary-bc-white;
+}
+
 .max-width {
   @apply max-w-[1440px] mx-auto;
 }
