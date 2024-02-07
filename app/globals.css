@@ -59,12 +59,20 @@ body {
   @apply font-BCSans;
 }
 
+.bg-bc-light-blue {
+  @apply bg-primary-bc-light-blue;
+}
+
 .bg-bcblue {
   @apply bg-primary-bc-blue;
 }
 
 .bg-bcwhite {
   @apply bg-primary-bc-white;
+}
+
+.text-bcwhite {
+  @apply text-primary-bc-white;
 }
 
 .max-width {

@@ -17,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-hidden">
-      <TopBar />
       <main className="flex justify-center items-center flex-1 pb-20 w-auto overflow-hidden flex-col bg-bcwhite">
-
         {children}
       </main>
     </html>

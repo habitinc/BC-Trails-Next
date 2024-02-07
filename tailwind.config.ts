@@ -14,6 +14,7 @@ const config: Config = {
       colors: {
         "primary-bc-white": "#f1f1f1",
         "primary-bc-blue": "#003366",
+        "primary-bc-light-blue": "#355992",
         "preview-bg-green": "#00a651"
       },
     },
