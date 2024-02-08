@@ -10,21 +10,15 @@ const page = () => {
     return (
         <>
             {/* <TopBar showLogo={true} /> */}
-            <main className="flex min-h-screen flex-col items-center justify-center p-24 overflow-hidden">
-                <div className="sign-builder flex flex-col align-middle justify-center">
+            <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden" style={{ padding: '24px', width: '100vw' }}>
+                <div className="sign-builder w-full flex flex-col items-center justify-center">
 
-                    <p className="text-center mb-12 max-w-sm mx-auto bc-sans ">Create Sign Page</p>
+                    <p className="text-center mb-12 mx-auto bc-sans" style={{ maxWidth: '95%' }}>Create Sign Page</p>
                     <SignBuilder />
-                    <CustomButton
-                        title="Get Started"
-                        containerStyles="text-bcwhite bg-primary-bc-light-blue rounded-md mx-auto"
-                    />
                 </div>
-
-
             </main>
         </>
     );
 }
 
-export default page
+export default page;

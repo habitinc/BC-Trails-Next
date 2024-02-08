@@ -5,5 +5,5 @@ import TopBar from "./TopBar"
 export {
     SignBuilder,
     SignPreview,
-    TopBar
+    TopBar,
 }
