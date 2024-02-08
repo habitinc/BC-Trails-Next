@@ -1,8 +1,15 @@
 import React from 'react'
+import { SignPreview } from '.'
 
 const SignBuilder = () => {
   return (
-    <div>SignBuilder</div>
+    <div className='flex'>
+      <div className='flex flex-col'>
+        SignBuilder
+      </div>
+      <SignPreview />
+    </div>
+
   )
 }
 
