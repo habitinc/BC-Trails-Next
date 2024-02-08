@@ -6,7 +6,7 @@ import { TopBar } from "@/components";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Trail Signage Generator | Recreation Sites and Trails BC",
+  title: "BC Trails Kiosk Signage Generator | Recreation Sites and Trails BC",
   description: "Sign Generator Tool for BC Trails",
 };
 
