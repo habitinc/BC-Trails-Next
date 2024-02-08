@@ -100,14 +100,14 @@ const isNextDisabled = currentStep === 0 && !selectedDimension || currentStep ==
             <CustomButton
               title="Previous Step"
               handleClick={handlePrevStep}
-              containerStyles="bg-gray-300 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-l flex items-center gap-2"
+              containerStyles="bg-gray-400 hover:bg-gray-300 text-white font-bold py-1 px-2 rounded-md flex items-center gap-4 mx-auto"
               icon={<ArrowLeftCircleIcon className="w-5 h-5" />}
               isDisabled={currentStep === 0} // Disable if on the first step
             />
             <CustomButton
               title="Next Step"
               handleClick={handleNextStep}
-              containerStyles="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r flex items-center gap-2"
+              containerStyles="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md flex items-center gap-4 mx-auto"
               icon={<ArrowRightCircleIcon className="w-5 h-5" />}
               isDisabled={isNextDisabled} // Disable based on step validation
             />
@@ -116,7 +116,7 @@ const isNextDisabled = currentStep === 0 && !selectedDimension || currentStep ==
             <CustomButton
               title="Start Over"
               handleClick={handleStartOver}
-              containerStyles="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 flex items-center gap-2"
+              containerStyles="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md flex items-center gap-2 mx-auto"
               icon={<ArrowPathIcon className="w-5 h-5" />}
             />
           </div>
