@@ -16,10 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-hidden">
-      <main className="flex justify-center items-center flex-1 pb-20 w-auto overflow-hidden flex-col bg-bcwhite">
-        {children}
-      </main>
+    <html lang="en">
+      <body> {/*className="overflow-hidden"*/}
+        <TopBar/>
+
+        <main className="flex justify-center items-center flex-1 w-auto overflow-hidden flex-col bg-bcwhite">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
