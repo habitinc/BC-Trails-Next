@@ -37,7 +37,7 @@ interface NavigationButtonsProps {
   
     return (
       <div className="navigation-buttons mt-4 flex flex-col items-center gap-2">
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full gap-1">
           {/* Previous Button */}
           <CustomButton
             title="Previous"
