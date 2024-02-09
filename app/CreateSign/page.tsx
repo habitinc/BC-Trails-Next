@@ -1,29 +1,34 @@
 "use client";
 
 import React from 'react';
+import { SignBuilder, TopBar } from "@/components";
 import Image from "next/image";
-import { SignBuilder, SignPreview, TopBar } from "@/components";
-import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 
-const page = () => {
+const Page = () => {
     return (
         <>
-        <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden" style={{ padding: '24px', width: '100vw' }}>
-            <div className="w-full flex flex-col items-center justify-center">
-                {/* Heading in a blue rectangle */}
-                <div className="bg-primary-bc-light-blue text-white w-full rounded-t-lg py-4 flex justify-center items-center bc-sans" style={{ maxWidth: '100%' }}>
-                    <h1 className="text-center text-3xl">Create Sign</h1>
-                </div>
+            <main className="flex min-h-screen flex-col items-center justify-start overflow-hidden pt-40 px-6 lg:px-10 pb-24 w-full">
+                <div className="w-full flex flex-col justify-center">
+                    {/* Div for mobile landscape prompt */}
+                    <div className="bg-gray-300 text-gray-800 w-full py-4 flex justify-center items-center text-center mb-6 rounded-md gap-1 md:hidden">
+                        <Image src="/rotate-icon.svg" alt="Landscape mode icon" width={60} height={60} className='ml-3'/>
+                        <p className='mr-3'>To best preview your sign, please turn any mobile devices to landscape mode.</p>
+                    </div>
 
-                {/* SignBuilder component */}
-                <div className="sign-builder w-full flex flex-col items-center justify-center rounded-b-lg bg-white">
-                    <SignBuilder />
+                    {/* Heading in a blue rectangle */}
+                    <div className="bg-primary-bc-light-blue text-white w-full rounded-t-lg py-4 flex justify-center items-center bc-sans">
+                        <h1 className="text-center text-2xl">Create Sign</h1>
+                    </div>
+
+                    {/* SignBuilder component */}
+                    <div className="sign-builder w-full flex flex-col items-center justify-center rounded-b-lg bg-white">
+                        <SignBuilder />
+                    </div>
                 </div>
-            </div>
-        </main>
-    </>
-);
+            </main>
+        </>
+    );
 }
 
-export default page;
+export default Page;
