@@ -9,7 +9,6 @@ import CustomButton from "@/components/CustomButton";
 const page = () => {
     return (
         <>
-            {/* <TopBar showLogo={true} /> */}
             <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden" style={{ padding: '24px', width: '100vw' }}>
                 <div className="sign-builder w-full flex flex-col items-center justify-center">
 

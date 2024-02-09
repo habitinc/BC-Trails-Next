@@ -9,7 +9,7 @@ const CustomButton = ({
   handleClick,
   btnType = 'button',
   textStyles,
-  icon, // This is correctly set up to accept ReactNode
+  icon,
   isDisabled = false,
   href
 }: CustomButtonProps) => {

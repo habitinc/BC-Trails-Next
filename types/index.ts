@@ -12,9 +12,20 @@ export interface CustomButtonProps {
   href?: string;
 }
 
+export interface SignProps {
+  dimensions: string;
+  name?: string;
+}
+
 export interface DimensionProps {
   title: string;
   dimensions: string; // Added to hold the "WxH" format string
+}
+
+export interface DimensionSelectorProps {
+  dimensions: DimensionProps[]; // Include the dimensions array
+  selectedDimension: DimensionProps | null;
+  onSelectDimension: (dimension: DimensionProps) => void;
 }
 
 export interface FormStep {
