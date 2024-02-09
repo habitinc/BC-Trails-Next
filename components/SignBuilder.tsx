@@ -15,27 +15,38 @@ const dimensions: DimensionProps[] = [
 
 
 const SignBuilder: React.FC = () => {
-  // Initialize selectedDimension state
-
+  // Assume the initial state includes dimensions and name, and potentially more properties.
   const [sign, setSign] = useState<SignProps>({ dimensions: dimensions[0].dimensions, name: '' });
   const [currentStep, setCurrentStep] = useState(0);
 
   const renderStepSummary = () => {
-    const summaries = [];
+    // Filter out empty or unset properties to avoid displaying them.
+    const filledEntries = Object.entries(sign).filter(([_, value]) => value);
 
-    // Always show the dimension selection summary if past the first step
-    if (currentStep > 0) {
-      summaries.push(
-        <div key="dimension-summary" className="text-lg font-bold mb-2">
-          Dimensions: <span className="font-normal">{sign.dimensions}</span>
+    // Only display summaries if past the first step and there are filled entries.
+    if (currentStep > 0 && filledEntries.length > 0) {
+      return (
+        <div className="mb-2">
+          {filledEntries.map(([key, value]) => (
+            <div key={key} className="text-md font-bold">
+              {/* Convert the key to a readable format and display its value */}
+              {formatKey(key)}: <span className="font-normal">{value}</span>
+            </div>
+          ))}
         </div>
       );
     }
 
-    // Add more summaries for other steps as needed
-    // if (currentStep > N) { ... }
+    // Return null or an empty fragment if no entries to display.
+    return null;
+  };
 
-    return summaries;
+  // A utility function to format keys for display, e.g., converting "firstName" to "First Name".
+  const formatKey = (key: string) => {
+    // Split the key into words based on uppercase letters, add spaces, and capitalize.
+    return key.replace(/([A-Z])/g, ' $1') // Add space before capital letters.
+      .replace(/^./, (str) => str.toUpperCase()) // Capitalize the first letter.
+      .trim();
   };
 
   const handleDimensionSelect = (dimension: DimensionProps) => {
@@ -46,7 +57,8 @@ const SignBuilder: React.FC = () => {
     setSign(prevSign => ({ ...prevSign, name }));
   };
   const handleNextStep = () => {
-    if ((currentStep === 0 && sign.dimensions) || (currentStep === 1 && sign.name.trim() !== '')) {
+    if ((currentStep === 0 && sign.dimensions) ||
+      (currentStep === 1 && (sign.name || '').trim() !== '')) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -62,7 +74,8 @@ const SignBuilder: React.FC = () => {
     setSign({ dimensions: dimensions[0].dimensions, name: '' });
   };
 
-  const isNextDisabled = (currentStep === 0 && !sign.dimensions) || (currentStep === 1 && sign.name.trim() === '');
+  const isNextDisabled = (currentStep === 0 && !sign.dimensions) ||
+    (currentStep === 1 && (sign.name || '').trim() === '');
 
   const renderStepContent = () => {
     return (
@@ -74,7 +87,7 @@ const SignBuilder: React.FC = () => {
           handleNameChange={handleNameChange}
           dimensions={dimensions}
           selectedDimension={dimensions.find(d => d.dimensions === sign.dimensions) || null}
-          name={sign.name}
+          name={sign.name || ''}
         />
       </>
     );
@@ -93,7 +106,7 @@ const SignBuilder: React.FC = () => {
         />
       </div>
       <div className="preview-container w-full md:w-2/3 bg-white p-4 shadow rounded-lg overflow-hidden flex justify-center items-center md:min-h-[600px]">
-        <SignPreview dimension={sign.dimensions} name={sign.name} />
+        <SignPreview dimension={sign.dimensions} name={sign.name || ''} />
       </div>
     </div>
   );

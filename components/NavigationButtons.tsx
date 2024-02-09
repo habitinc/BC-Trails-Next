@@ -21,24 +21,24 @@ const NavigationButtons: React.FC<NavigationButtonsProps> = ({
   <div className="navigation-buttons mt-4 flex flex-col items-center gap-2">
     <div className="flex justify-between w-full">
       <CustomButton
-        title="Previous Step"
+        title="Previous"
         handleClick={handlePrevStep}
-        containerStyles="bg-gray-400 hover:bg-gray-300 text-white font-bold py-1 px-2 rounded-md flex items-center gap-4 mx-auto"
+        containerStyles="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-2 rounded-md flex items-center mx-auto"
         icon={<ArrowLeftCircleIcon className="w-5 h-5" />}
         isDisabled={isPrevDisabled}
       />
       <CustomButton
-        title="Next Step"
+        title="Next"
         handleClick={handleNextStep}
-        containerStyles="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md flex items-center gap-4 mx-auto"
+        containerStyles="bg-bc-light-blue hover:bg-primary-bc-blue text-white font-bold py-1 px-2 rounded-md flex items-center mx-auto"
         icon={<ArrowRightCircleIcon className="w-5 h-5" />}
         isDisabled={isNextDisabled}
       />
     </div>
     <CustomButton
-      title="Start Over"
+      title="Reset"
       handleClick={handleStartOver}
-      containerStyles="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md flex items-center gap-2 mx-auto"
+      containerStyles="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md flex items-center mx-auto"
       icon={<ArrowPathIcon className="w-5 h-5" />}
     />
   </div>

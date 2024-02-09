@@ -37,7 +37,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
+  font-family: 'BCSans', sans-serif;
 }
 
 body {
@@ -56,7 +56,7 @@ body {
 
 /* START: General styles */
 .bc-sans {
-  @apply font-BCSans;
+  font-family: 'BCSans', sans-serif;
 }
 
 .bg-bc-light-blue {

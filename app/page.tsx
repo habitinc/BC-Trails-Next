@@ -17,7 +17,7 @@ export default function Home() {
             height={75}
             className="w-full mx-auto mb-12"
           />
-          <p className="text-center mb-12 max-w-sm mx-auto bc-sans ">Welcome to the RSTBC Kiosk Sign Generator. Complete the questionnaire below to generate a sign and download print-ready files.</p>
+          <p className="text-center mb-12 max-w-sm mx-auto bc-sans ">Welcome to the RSTBC Kiosk Sign Generator. Complete the following selections to generate a sign and download print-ready files.</p>
           <CustomButton
             title="Get Started"
             containerStyles="text-bcwhite bg-primary-bc-light-blue rounded-md mx-auto px-8 py-4"
