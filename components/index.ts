@@ -4,6 +4,7 @@ import TopBar from "./TopBar"
 import CustomButton from "./CustomButton"
 import SignTitle from "./SignTitle"
 import NavigationButtons from "./NavigationButtons"
+import ConfirmationModal from "./ConfirmationModal"
 
 export {
     SignBuilder,
@@ -11,5 +12,6 @@ export {
     TopBar,
     CustomButton,
     SignTitle,
-    NavigationButtons
+    NavigationButtons,
+    ConfirmationModal
 }

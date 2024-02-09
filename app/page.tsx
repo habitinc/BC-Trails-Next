@@ -20,7 +20,7 @@ export default function Home() {
           <p className="text-center mb-12 max-w-sm mx-auto bc-sans ">Welcome to the RSTBC Kiosk Sign Generator. Complete the following selections to generate a sign and download print-ready files.</p>
           <CustomButton
             title="Get Started"
-            containerStyles="text-bcwhite bg-primary-bc-light-blue rounded-md mx-auto px-8 py-4"
+            containerStyles="text-bcwhite bg-primary-bc-light-blue rounded-md mx-auto px-8 py-4 hover:bg-primary-bc-blue"
             href="/CreateSign" // Use the href prop for navigation
           />
         </div>

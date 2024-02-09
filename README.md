@@ -1,6 +1,6 @@
 ### TO DO
 Update ReadME
-Update Comments
+Update Comments throughout
 
 
 
