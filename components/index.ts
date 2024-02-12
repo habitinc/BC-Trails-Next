@@ -5,6 +5,7 @@ import CustomButton from "./CustomButton"
 import SignTitle from "./SignTitle"
 import NavigationButtons from "./NavigationButtons"
 import ConfirmationModal from "./ConfirmationModal"
+import BackgroundCarousel from "./BackgroundCarousel"
 
 export {
     SignBuilder,
@@ -13,5 +14,6 @@ export {
     CustomButton,
     SignTitle,
     NavigationButtons,
-    ConfirmationModal
+    ConfirmationModal,
+    BackgroundCarousel
 }
