@@ -72,12 +72,20 @@ body {
   @apply bg-primary-bc-white;
 }
 
+.bg-preview {
+  @apply bg-preview-bc-green;
+}
+
 .text-bcwhite {
   @apply text-primary-bc-white;
 }
 
 .text-bcblue {
   @apply text-primary-bc-blue;
+}
+
+.text-bc-yellow {
+  @apply text-primary-bc-yellow;
 }
 
 .max-width {

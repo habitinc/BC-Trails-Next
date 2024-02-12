@@ -17,13 +17,13 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ isOpen, onConfirm
         <p className="text-center mb-4 font-bold">All progress will be erased</p>
         <div className="flex justify-center gap-6">
           <button
-            className="bg-green-400 hover:bg-green-500 text-white py-2 px-4 rounded w-20"
+            className="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded w-20"
             onClick={onConfirm}
           >
             Yes
           </button>
           <button
-            className="bg-red-400 hover:bg-red-500 text-white py-2 px-4 rounded w-20"
+            className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded w-20"
             onClick={onCancel}
           >
             No

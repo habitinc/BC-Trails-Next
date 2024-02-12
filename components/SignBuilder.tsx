@@ -19,7 +19,7 @@ interface SignBuilderProps {
 
 const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
   // Assume the initial state includes dimensions and name, and potentially more properties.
-  const [sign, setSign] = useState<SignProps>({ dimensions: dimensions[0].dimensions, name: '' });
+  const [sign, setSign] = useState<SignProps>({ dimensions: dimensions[0].dimensions, trailName: '' });
   const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
@@ -37,8 +37,17 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
     if (currentStep > 0 && filledEntries.length > 0) {
       return (
         <div className="mb-2">
-          {filledEntries.map(([key, value]) => (
-            <div key={key} className="text-md font-bold">
+          {filledEntries.map(([key, value], index) => (
+            <div 
+              key={key} 
+              className={`text-md font-bold py-2 px-4 border-solid border-2 border-gray-300 ${
+                index === 0
+                  ? "bg-gray-200 text-gray-500 rounded-tl-lg rounded-tr-lg border-b-0" // First item
+                  : index === filledEntries.length - 1
+                  ? "bg-gray-200 text-gray-500 rounded-bl-lg rounded-br-lg" // Last item
+                  : "bg-gray-200 text-gray-500 border-t-0" // Middle items
+              }`}
+            >
               {/* Convert the key to a readable format and display its value */}
               {formatKey(key)}: <span className="font-normal">{value}</span>
             </div>
@@ -63,12 +72,12 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
     setSign({ ...sign, dimensions: dimension.dimensions });
   };
 
-  const handleNameChange = (name: string) => {
-    setSign(prevSign => ({ ...prevSign, name }));
+  const handleNameChange = (trailName: string) => {
+    setSign(prevSign => ({ ...prevSign, trailName }));
   };
   const handleNextStep = () => {
     if ((currentStep === 0 && sign.dimensions) ||
-      (currentStep === 1 && (sign.name || '').trim() !== '')) {
+      (currentStep === 1 && (sign.trailName || '').trim() !== '')) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -81,11 +90,11 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
 
   const handleStartOver = () => {
     setCurrentStep(0);
-    setSign({ dimensions: dimensions[0].dimensions, name: '' });
+    setSign({ dimensions: dimensions[0].dimensions, trailName: '' });
   };
 
   const isNextDisabled = (currentStep === 0 && !sign.dimensions) ||
-    (currentStep === 1 && (sign.name || '').trim() === '');
+    (currentStep === 1 && (sign.trailName || '').trim() === '');
 
   const renderStepContent = () => {
     return (
@@ -97,14 +106,14 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
           handleNameChange={handleNameChange}
           dimensions={dimensions}
           selectedDimension={dimensions.find(d => d.dimensions === sign.dimensions) || null}
-          name={sign.name || ''}
+          trailName={sign.trailName || ''}
         />
       </>
     );
   };
 
   return (
-    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 w-full mx-auto" style={{ width: '100%' }}>
+    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 w-full mx-auto">
       <div className="form-container w-full md:w-1/3 bg-white p-4 shadow rounded-lg overflow-hidden h-auto md:min-h-[600px]">
         {renderStepContent()}
         <NavigationButtons
@@ -116,9 +125,10 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
         />
       </div>
       <div className="preview-container w-full md:w-2/3 bg-white p-4 shadow rounded-lg overflow-hidden flex justify-center items-center md:min-h-[600px]">
-        <SignPreview dimension={sign.dimensions} name={sign.name || ''} />
+        <SignPreview dimension={sign.dimensions} trailName={sign.trailName || ''} />
       </div>
     </div>
+    
   );
 };
 

@@ -7,10 +7,10 @@ import { DimensionProps } from '@/types';
 interface StepHandlerProps {
   currentStep: number;
   handleDimensionSelect: (dimension: DimensionProps) => void;
-  handleNameChange: (name: string) => void;
+  handleNameChange: (trailName: string) => void;
   dimensions: DimensionProps[];
   selectedDimension: DimensionProps | null;
-  name: string;
+  trailName: string;
 }
 
 const StepHandler: React.FC<StepHandlerProps> = ({
@@ -19,7 +19,7 @@ const StepHandler: React.FC<StepHandlerProps> = ({
   handleNameChange,
   dimensions,
   selectedDimension,
-  name,
+  trailName,
 }) => {
   switch (currentStep) {
     case 0:
@@ -33,7 +33,7 @@ const StepHandler: React.FC<StepHandlerProps> = ({
     case 1:
       return (
         <SignTitle
-          name={name}
+          trailName={trailName}
           setName={handleNameChange}
         />
       );

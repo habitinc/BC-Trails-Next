@@ -40,9 +40,9 @@ interface NavigationButtonsProps {
         <div className="flex justify-between w-full gap-1">
           {/* Previous Button */}
           <CustomButton
-            title="Previous"
+            title="Back"
             handleClick={handlePrevStep}
-            containerStyles="w-40 bg-gray-500 hover:bg-gray-600 text-white py-1 px-2 rounded-md flex items-center mx-auto justify-center gap-1"
+            containerStyles="w-32 bg-gray-300 hover:bg-gray-400 text-primary-bc-blue py-3 rounded-md flex items-center mx-auto justify-center gap-2"
             icon={<ArrowLeftCircleIcon className="w-5 h-5" />}
             isDisabled={isPrevDisabled}
           />
@@ -50,7 +50,7 @@ interface NavigationButtonsProps {
           <CustomButton
             title="Next"
             handleClick={handleNextStep}
-            containerStyles="w-40 bg-bc-light-blue hover:bg-primary-bc-blue text-white py-1 pl-3 rounded-md flex flex-row-reverse items-center mx-auto gap-3 justify-center"
+            containerStyles="w-32 bg-bc-light-blue hover:bg-primary-bc-blue text-white py-3 pl-2 rounded-md flex flex-row-reverse items-center mx-auto gap-3 justify-center"
             icon={<ArrowRightCircleIcon className="w-5 h-5" />}
             isDisabled={isNextDisabled}
           />
@@ -59,7 +59,7 @@ interface NavigationButtonsProps {
         <CustomButton
           title="Reset"
           handleClick={showModal}
-          containerStyles="w-40 bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded-md flex items-center mx-auto justify-center gap-1"
+          containerStyles="w-32 bg-red-400 hover:bg-red-500 text-white py-3 px-2 rounded-md flex items-center mx-auto justify-center gap-1"
           icon={<ArrowPathIcon className="w-5 h-5" />}
         />
         {/* Confirmation Modal */}
