@@ -76,6 +76,10 @@ body {
   @apply text-primary-bc-white;
 }
 
+.text-bcblue {
+  @apply text-primary-bc-blue;
+}
+
 .max-width {
   @apply max-w-[1440px] mx-auto;
 }

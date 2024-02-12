@@ -1,7 +1,7 @@
 "use client";
 
 // SignBuilder.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import DimensionSelector from './DimensionSelector';
 import { SignPreview, CustomButton, SignTitle, NavigationButtons } from '@/components';
 import StepHandler from './StepHandler';
@@ -13,11 +13,21 @@ const dimensions: DimensionProps[] = [
   { title: "8' x 4'", dimensions: "8x4" },
 ];
 
+interface SignBuilderProps {
+  onTitleChange: (title: string) => void;
+}
 
-const SignBuilder: React.FC = () => {
+const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
   // Assume the initial state includes dimensions and name, and potentially more properties.
   const [sign, setSign] = useState<SignProps>({ dimensions: dimensions[0].dimensions, name: '' });
   const [currentStep, setCurrentStep] = useState(0);
+
+  useEffect(() => {
+    // Example of determining the title based on the current step
+    const titles = ["Please select the size of the sign", "Please fill in the following information:"];
+    const currentTitle = titles[currentStep] || "Create Sign";
+    onTitleChange(currentTitle);
+  }, [currentStep, onTitleChange]);
 
   const renderStepSummary = () => {
     // Filter out empty or unset properties to avoid displaying them.

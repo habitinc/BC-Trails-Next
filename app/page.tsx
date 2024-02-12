@@ -4,6 +4,7 @@ import Image from "next/image";
 import { SignBuilder, SignPreview, TopBar } from "@/components";
 import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
+import { ArrowRightCircleIcon } from "@heroicons/react/16/solid";
 
 export default function Home() {
   return (
@@ -13,14 +14,15 @@ export default function Home() {
           <Image
             src="/bc-trails-logo.svg"
             alt="BC Trails Logo"
-            width={344}
-            height={75}
-            className="w-full mx-auto mb-12"
+            width={320}
+            height={60}
+            className="mx-auto mb-12"
           />
-          <p className="text-center mb-12 max-w-sm mx-auto bc-sans">Welcome to the RSTBC Kiosk Sign Generator. Complete the following selections to generate a sign and download print-ready files.</p>
+          <p className="text-center mb-12 max-w-md mx-auto bc-sans text-primary-bc-blue text-lg px-2">Welcome to the RSTBC Kiosk Sign Generator. Complete the following selections to generate a sign and download print-ready files.</p>
           <CustomButton
-            title="Get Started"
-            containerStyles="text-bcwhite bg-primary-bc-light-blue rounded-md mx-auto px-8 py-4 hover:bg-primary-bc-blue"
+            title="Begin"
+            containerStyles="w-40 bg-bc-light-blue hover:bg-primary-bc-blue text-white py-2 pl-2 rounded-md flex flex-row-reverse items-center mx-auto gap-3 justify-center"
+            icon={<ArrowRightCircleIcon className="w-5 h-5" />}
             href="/CreateSign" // Use the href prop for navigation
           />
         </div>

@@ -13,7 +13,7 @@ const BackgroundCarousel = () => {
   
       const updateBackgroundImage = () => {
         // Adding a white overlay using linear-gradient
-        const backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('${images[currentImageIndex]}')`;
+        const backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('${images[currentImageIndex]}')`;
         document.body.style.backgroundImage = backgroundImage;
         document.body.style.backgroundSize = 'cover';
         document.body.style.backgroundPosition = 'center';

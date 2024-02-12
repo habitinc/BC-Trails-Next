@@ -13,7 +13,6 @@ const TopBar = () => {
                         alt="BC Trails Logo"
                         width={192}
                         height={41}
-                        className="max-w-full"
                     />
                 </Link>
             </span>
