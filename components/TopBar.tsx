@@ -4,9 +4,9 @@ import Link from 'next/link';
 
 const TopBar = () => {
     return (
-        <div className="bg-bcblue w-full h-4 flex items-center">
+        <span className="bg-bcblue w-full h-4 flex items-center z-10 absolute">
 
-            <div className="absolute top-5 left-0 pl-2 pt-1">
+            <span className="absolute top-5 left-0 pl-2 pt-1">
                 <Link href="/" passHref>
                     <Image
                         src="/bc-trails-logo.svg"
@@ -16,9 +16,9 @@ const TopBar = () => {
                         className="max-w-full"
                     />
                 </Link>
-            </div>
+            </span>
 
-        </div>
+        </span>
     );
 };
 

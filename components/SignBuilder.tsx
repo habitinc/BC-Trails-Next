@@ -2,11 +2,11 @@
 
 // SignBuilder.tsx
 import React, { useState } from 'react';
-import DimensionSelector from './DimensionSelector';
+// import DimensionSelector from './DimensionSelector';
 import { SignPreview, CustomButton, SignTitle, NavigationButtons } from '@/components';
 import StepHandler from './StepHandler';
 import { DimensionProps, SignProps } from '@/types';
-import { ArrowLeftCircleIcon, ArrowRightCircleIcon, ArrowPathIcon } from '@heroicons/react/16/solid';
+// import { ArrowLeftCircleIcon, ArrowRightCircleIcon, ArrowPathIcon } from '@heroicons/react/16/solid';
 
 const dimensions: DimensionProps[] = [
   { title: "3' x 3'", dimensions: "3x3" },
