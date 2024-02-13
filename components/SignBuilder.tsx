@@ -22,15 +22,14 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
   const [sign, setSign] = useState<SignProps>({
     dimensions: dimensions[0].dimensions,
     trailName: '',
-    trailAbout: '', // Add this line if not already present
+    trailAbout: '',
+    indigenousTrailName: '', // Initialize the new field
+    indigenousAbout: '', // Initialize the new field
   });
 
-  const handleAboutChange = (trailAbout: string) => {
-    setSign((prevSign) => ({
-      ...prevSign,
-      trailAbout, // Update the trailAbout property
-    }));
-  };
+
+
+
 
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -86,6 +85,29 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
   const handleNameChange = (trailName: string) => {
     setSign(prevSign => ({ ...prevSign, trailName }));
   };
+
+  const handleAboutChange = (trailAbout: string) => {
+    setSign((prevSign) => ({
+      ...prevSign,
+      trailAbout, // Update the trailAbout property
+    }));
+  };
+
+  const handleIndigenousNameChange = (indigenousTrailName: string) => {
+    setSign(prevSign => ({
+      ...prevSign,
+      indigenousTrailName,
+    }));
+  };
+
+  const handleIndigenousAboutChange = (indigenousAbout: string) => {
+    setSign(prevSign => ({
+      ...prevSign,
+      indigenousAbout,
+    }));
+  };
+
+
   const handleNextStep = () => {
     if ((currentStep === 0 && sign.dimensions) ||
       (currentStep === 1 && (sign.trailName || '').trim() !== '')) {
@@ -115,11 +137,15 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
           currentStep={currentStep}
           handleDimensionSelect={handleDimensionSelect}
           handleNameChange={handleNameChange}
-          handleAboutChange={handleAboutChange} // Pass this function to StepHandler
+          handleAboutChange={handleAboutChange}
+          handleIndigenousNameChange={handleIndigenousNameChange} // Pass the new handler
+          handleIndigenousAboutChange={handleIndigenousAboutChange} // Pass the new handler
           dimensions={dimensions}
           selectedDimension={dimensions.find(d => d.dimensions === sign.dimensions) || null}
           trailName={sign.trailName || ''}
-          trailAbout={sign.trailAbout || ''} // Ensure you're passing this if you're using it
+          trailAbout={sign.trailAbout || ''}
+          indigenousTrailName={sign.indigenousTrailName || ''} // Pass the new field
+          indigenousAbout={sign.indigenousAbout || ''} // Pass the new field
         />
       </>
     );
@@ -138,7 +164,7 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
         />
       </div>
       <div className="preview-container w-full bg-white p-4 shadow rounded-lg overflow-hidden flex justify-center items-center md:min-h-[600px]">
-        <SignPreview dimension={sign.dimensions} trailName={sign.trailName || ''} trailAbout={sign.trailAbout || ''} indigenousTrailName={sign.trailName || ''} indigenousAbout={sign.trailAbout || ''} />
+        <SignPreview dimension={sign.dimensions} trailName={sign.trailName || ''} trailAbout={sign.trailAbout || ''} indigenousTrailName={sign.indigenousTrailName || ''} indigenousAbout={sign.indigenousAbout || ''} />
       </div>
     </div>
 

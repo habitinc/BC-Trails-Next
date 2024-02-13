@@ -8,6 +8,7 @@
 ### TO DO
 Update ReadME
 Update Comments throughout
+Change BC trails logo in SignPreview to have white font to reflect design document
 
 
 
