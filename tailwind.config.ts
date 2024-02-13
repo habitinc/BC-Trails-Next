@@ -16,7 +16,8 @@ const config: Config = {
         "primary-bc-blue": "#003366",
         "primary-bc-light-blue": "#355992",
         "preview-bc-green": "#2a6541",
-        "primary-bc-yellow": "#d2bd3b"
+        "primary-bc-yellow": "#d2bd3b",
+        "primary-bc-tan": "#ddd3b1"
       },
     },
   },

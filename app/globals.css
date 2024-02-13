@@ -76,6 +76,10 @@ body {
   @apply bg-preview-bc-green;
 }
 
+.bg-bctan {
+  @apply bg-primary-bc-tan;
+}
+
 .text-bcwhite {
   @apply text-primary-bc-white;
 }
