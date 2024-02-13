@@ -19,7 +19,19 @@ interface SignBuilderProps {
 
 const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
   // Assume the initial state includes dimensions and name, and potentially more properties.
-  const [sign, setSign] = useState<SignProps>({ dimensions: dimensions[0].dimensions, trailName: '' });
+  const [sign, setSign] = useState<SignProps>({
+    dimensions: dimensions[0].dimensions,
+    trailName: '',
+    trailAbout: '', // Add this line if not already present
+  });
+
+  const handleAboutChange = (trailAbout: string) => {
+    setSign((prevSign) => ({
+      ...prevSign,
+      trailAbout, // Update the trailAbout property
+    }));
+  };
+
   const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
@@ -38,15 +50,14 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
       return (
         <div className="mb-2">
           {filledEntries.map(([key, value], index) => (
-            <div 
-              key={key} 
-              className={`text-md font-bold py-2 px-4 border-solid border-2 border-gray-300 ${
-                index === 0
-                  ? "bg-gray-200 text-gray-500 rounded-tl-lg rounded-tr-lg border-b-0" // First item
-                  : index === filledEntries.length - 1
+            <div
+              key={key}
+              className={`text-md font-bold py-2 px-4 border-solid border-2 border-gray-300 ${index === 0
+                ? "bg-gray-200 text-gray-500 rounded-tl-lg rounded-tr-lg border-b-0" // First item
+                : index === filledEntries.length - 1
                   ? "bg-gray-200 text-gray-500 rounded-bl-lg rounded-br-lg" // Last item
                   : "bg-gray-200 text-gray-500 border-t-0" // Middle items
-              }`}
+                }`}
             >
               {/* Convert the key to a readable format and display its value */}
               {formatKey(key)}: <span className="font-normal">{value}</span>
@@ -104,17 +115,19 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
           currentStep={currentStep}
           handleDimensionSelect={handleDimensionSelect}
           handleNameChange={handleNameChange}
+          handleAboutChange={handleAboutChange} // Pass this function to StepHandler
           dimensions={dimensions}
           selectedDimension={dimensions.find(d => d.dimensions === sign.dimensions) || null}
           trailName={sign.trailName || ''}
+          trailAbout={sign.trailAbout || ''} // Ensure you're passing this if you're using it
         />
       </>
     );
   };
 
   return (
-    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 w-full mx-auto">
-      <div className="form-container w-full md:w-1/3 bg-white p-4 shadow rounded-lg overflow-hidden h-auto md:min-h-[600px]">
+    <div className="flex flex-col  space-y-4 md:space-y-0  w-full mx-auto">
+      <div className="form-container w-full bg-white p-4 shadow rounded-lg overflow-hidden h-auto md:min-h-[600px]">
         {renderStepContent()}
         <NavigationButtons
           handlePrevStep={handlePrevStep}
@@ -124,11 +137,11 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
           isNextDisabled={isNextDisabled}
         />
       </div>
-      <div className="preview-container w-full md:w-2/3 bg-white p-4 shadow rounded-lg overflow-hidden flex justify-center items-center md:min-h-[600px]">
-        <SignPreview dimension={sign.dimensions} trailName={sign.trailName || ''} />
+      <div className="preview-container w-full bg-white p-4 shadow rounded-lg overflow-hidden flex justify-center items-center md:min-h-[600px]">
+        <SignPreview dimension={sign.dimensions} trailName={sign.trailName || ''} trailAbout={sign.trailAbout || ''} indigenousTrailName={sign.trailName || ''} indigenousAbout={sign.trailAbout || ''} />
       </div>
     </div>
-    
+
   );
 };
 

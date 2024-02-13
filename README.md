@@ -1,3 +1,10 @@
+### If Adding a new variable for the overarching Sign object
+- Need to update in:
+>> index.ts (SignProps and FormStep)
+>> Sign preview component (for Sign object)
+>> Sign Builder component (for sign object)
+>> Form steps component (to handle where the user is in the build process, and if they can move previous or forwards)
+
 ### TO DO
 Update ReadME
 Update Comments throughout

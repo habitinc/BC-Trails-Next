@@ -15,6 +15,9 @@ export interface CustomButtonProps {
 export interface SignProps {
   dimensions: string;
   trailName?: string;
+  trailAbout?: string;
+  indigenousTrailName?: string;
+  indigenousAbout?: string;
 }
 
 export interface DimensionProps {

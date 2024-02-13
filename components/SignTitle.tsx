@@ -1,21 +1,47 @@
-// SignTitle.tsx
 import React from 'react';
 
 interface SignTitleProps {
   trailName: string;
-  setName: (trailName: string) => void; // Callback function to update the parent state
+  trailAbout?: string;
+  setName: (trailName: string) => void;
+  setAbout: (trailAbout: string) => void;
 }
 
-const SignTitle: React.FC<SignTitleProps> = ({ trailName, setName }) => {
+const SignTitle: React.FC<SignTitleProps> = ({
+  trailName,
+  trailAbout = '',
+  setName,
+  setAbout,
+}) => {
+  // Directly pass the handler for the trailName
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  // Handler for changes in the "Trail About" textarea
+  const handleAboutChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setAbout(e.target.value);
+  };
+
   return (
     <>
       <h2 className="text-md font-semibold mb-1 mt-4">Trail Name</h2>
       <input
         type="text"
         value={trailName}
-        onChange={(e) => setName(e.target.value)}
+        onChange={handleNameChange}
         className="mt-1 p-2 w-full border border-gray-300 rounded-sm shadow-sm"
         placeholder="Enter the name of the trail..."
+        maxLength={28} // Max length for the trail name
+      />
+      <h2 className="text-md font-semibold mb-1 mt-4">Trail About</h2>
+      <textarea
+        value={trailAbout}
+        onChange={handleAboutChange}
+        className="mt-1 p-2 w-full border border-gray-300 rounded-sm shadow-sm"
+        placeholder="Enter a brief description of the trail..."
+        rows={3} // Set to 3 lines tall
+        maxLength={219} // 73 characters * 3 lines for a simple approximation
       />
     </>
   );
