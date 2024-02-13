@@ -8,6 +8,7 @@ const BackgroundCarousel = () => {
         '/assets/images/mountain-biking.jpg',
         '/assets/images/hiking.jpg',
         '/assets/images/snowmobile.jpg',
+        '/assets/images/mountain-biking-two.jpg',
       ];
       let currentImageIndex = 0;
   
