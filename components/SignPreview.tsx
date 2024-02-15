@@ -84,9 +84,9 @@ const SignPreview: React.FC<SignPreviewProps> = ({
             className='ml-4'
           />
           <div className='flex flex-row gap-10 items-center justify-center text-center'>
-            
+
             {/* THIS AREA NEEDS TO DYNAMICALLY TAKE IN AN UPLOAD OF A PARTNER LOGO THAT SPECIFIES AN SVG FORMAT AND ALSO HAS A TOTAL OF 4 UPLOAD OPTIONS, THE IMAGE ATTRIBUTES FOR WIDTH ETC CAN CHANGE, BUT THE SRC IS DYNAMICALLY RENDERED OFF OF AN UPLOAD, THIS SHOULD BE BASICALLY A FOREACH LOOP THAT CONTAINS PARTNER LOGOS AND RENDERS THEM ACCORDINGLY, THIS WILL HAVE TO BE PASSED AS AN OPTIONAL PROP TO THE SIGN OBJECT */}
-            
+
             <div className='flex flex-col items-center justify-center text-center'><h4 className='text-primary-bc-white text-bcsans text-sm'>Trail Partner</h4>
               <Image
                 src='/icons/placeholder.svg'

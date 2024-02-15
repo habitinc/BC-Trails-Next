@@ -5,14 +5,19 @@
 >> Sign Builder component (for sign object)
 >> Form steps component (to handle where the user is in the build process, and if they can move previous or forwards)
 
+- Control Flow is:
+>> page.tsx
+>> CreatePage/index.tsx
+>> Object DTO for Sign JSON is mounted on SignBuilder.tsx
+>> SignBuilder passes props to SignPreview.tsx and StepHandler.tsx, and receives props from all necessary components in building sign object
+>> StepHandler also controls DTO object of Sign which all necessary props populate in StepHandler and SignPreview components, leading to object connection
+>> Eventual goal is to have SignBuilder have all necessary 'Sign' prop variables to be able to successfully parse a JSON object to SVG which can be exported
+
+
 ### TO DO
 Update ReadME
 Update Comments throughout
 Change BC trails logo in SignPreview to have white font to reflect design document
-
-
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -27,21 +32,6 @@ pnpm dev
 # or
 bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
