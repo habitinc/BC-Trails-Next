@@ -1,4 +1,8 @@
+// Use client directive for any components or pages utilizing state or hooks such as useState, useEffect, useReducer, useContext, etc. This directive is not required for components that only use props and do not have any internal state or side effects.
 "use client";
+
+//This is the primary homepage, denoted via page.tsx in the app directory. Utilziing Next.js' app routing system this allows for ease of access without having to denote prop drilling or hoisting
+// If needing to create an additional homepage, or navigation to a different link/subdirectory - developer needs to create a new folder within app, and denote a new page.tsx file within that folder
 
 import Image from "next/image";
 import { SignBuilder, SignPreview, TopBar } from "@/components";

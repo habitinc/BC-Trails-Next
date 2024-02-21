@@ -1,3 +1,5 @@
+// Index.ts includes an export for all component files, to be referenced via import in other files. This is a good practice to keep the codebase organized and easy to maintain.
+
 import SignBuilder from "./SignBuilder"
 import SignPreview from "./SignPreview"
 import TopBar from "./TopBar"

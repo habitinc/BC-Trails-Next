@@ -1,3 +1,5 @@
+// Layout.tsx applies general layout of entire application and will wrap all necessary children and pages that are passed to it via {children} prop
+
 import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 import "./globals.css";

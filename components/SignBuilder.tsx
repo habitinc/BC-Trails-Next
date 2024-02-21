@@ -1,3 +1,4 @@
+// Use client directive for any components or pages utilizing state or hooks such as useState, useEffect, useReducer, useContext, etc. This directive is not required for components that only use props and do not have any internal state or side effects.
 "use client";
 
 // SignBuilder.tsx
@@ -21,10 +22,10 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
   // Assume the initial state includes dimensions and name, and potentially more properties.
   const [sign, setSign] = useState<SignProps>({
     dimensions: dimensions[0].dimensions,
-    trailName: '',
-    trailAbout: '',
-    indigenousTrailName: '', // Initialize the new field
-    indigenousAbout: '', // Initialize the new field
+    trailNetworkName: '', // Initialize the new field TRAIL NETWORK
+    trailNetworkAbout: '',
+    indigenousTrailNetworkName: '', // Initialize the new field
+    indigenousTrailNetworkAbout: '', // Initialize the new field
   });
 
 
@@ -83,34 +84,34 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
   };
 
   const handleNameChange = (trailName: string) => {
-    setSign(prevSign => ({ ...prevSign, trailName }));
+    setSign(prevSign => ({ ...prevSign, trailNetworkName: trailName }));
   };
 
   const handleAboutChange = (trailAbout: string) => {
     setSign((prevSign) => ({
       ...prevSign,
-      trailAbout, // Update the trailAbout property
+      trailNetworkAbout: trailAbout, // Update the trailAbout property
     }));
   };
 
   const handleIndigenousNameChange = (indigenousTrailName: string) => {
     setSign(prevSign => ({
       ...prevSign,
-      indigenousTrailName,
+      indigenousTrailNetworkName: indigenousTrailName,
     }));
   };
 
   const handleIndigenousAboutChange = (indigenousAbout: string) => {
     setSign(prevSign => ({
       ...prevSign,
-      indigenousAbout,
+      indigenousTrailNetworkAbout: indigenousAbout,
     }));
   };
 
 
   const handleNextStep = () => {
     if ((currentStep === 0 && sign.dimensions) ||
-      (currentStep === 1 && (sign.trailName || '').trim() !== '')) {
+      (currentStep === 1 && (sign.trailNetworkName || '').trim() !== '')) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -123,11 +124,11 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
 
   const handleStartOver = () => {
     setCurrentStep(0);
-    setSign({ dimensions: dimensions[0].dimensions, trailName: '' });
+    setSign({ dimensions: dimensions[0].dimensions, trailNetworkName: '' });
   };
 
   const isNextDisabled = (currentStep === 0 && !sign.dimensions) ||
-    (currentStep === 1 && (sign.trailName || '').trim() === '');
+    (currentStep === 1 && (sign.trailNetworkName || '').trim() === '');
 
   const renderStepContent = () => {
     return (
@@ -142,10 +143,10 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
           handleIndigenousAboutChange={handleIndigenousAboutChange} // Pass the new handler
           dimensions={dimensions}
           selectedDimension={dimensions.find(d => d.dimensions === sign.dimensions) || null}
-          trailName={sign.trailName || ''}
-          trailAbout={sign.trailAbout || ''}
-          indigenousTrailName={sign.indigenousTrailName || ''} // Pass the new field
-          indigenousAbout={sign.indigenousAbout || ''} // Pass the new field
+          trailName={sign.trailNetworkName || ''}
+          trailAbout={sign.trailNetworkAbout || ''}
+          indigenousTrailName={sign.indigenousTrailNetworkName || ''} // Pass the new field
+          indigenousAbout={sign.indigenousTrailNetworkAbout || ''} // Pass the new field
         />
       </>
     );
@@ -164,7 +165,7 @@ const SignBuilder: React.FC<SignBuilderProps> = ({ onTitleChange }) => {
         />
       </div>
       <div className="preview-container w-full bg-white p-4 shadow rounded-lg overflow-hidden flex justify-center items-center md:min-h-[600px]">
-        <SignPreview dimension={sign.dimensions} trailName={sign.trailName || ''} trailAbout={sign.trailAbout || ''} indigenousTrailName={sign.indigenousTrailName || ''} indigenousAbout={sign.indigenousAbout || ''} />
+        <SignPreview dimension={sign.dimensions} trailName={sign.trailNetworkName || ''} trailAbout={sign.trailNetworkAbout || ''} indigenousTrailName={sign.indigenousTrailNetworkName || ''} indigenousAbout={sign.indigenousTrailNetworkAbout || ''} />
       </div>
     </div>
 

@@ -1,3 +1,6 @@
+// This file should denote types for various components, such as buttons, forms, and other components that may be utilized within the application. This is a good practice to ensure that the codebase is organized and easy to maintain. This file should be located in the types directory within the app directory.
+// Any additional types that are required to be created can be defined here and exported, and then imported within their respective components where they are to be utilized. Ensure your types are strongly defined as this can cause errors within typescript if you are passing props that are not defined within the types file.
+
 import { MouseEventHandler } from "react";
 import { ReactNode } from "react";
 
@@ -14,10 +17,10 @@ export interface CustomButtonProps {
 
 export interface SignProps {
   dimensions: string;
-  trailName?: string;
-  trailAbout?: string;
-  indigenousTrailName?: string;
-  indigenousAbout?: string;
+  trailNetworkName?: string;
+  trailNetworkAbout?: string;
+  indigenousTrailNetworkName?: string;
+  indigenousTrailNetworkAbout?: string;
 }
 
 export interface DimensionProps {

@@ -11,6 +11,7 @@ interface SignPreviewProps {
 }
 
 // Utility function to insert line breaks every 73 characters
+// This may need to be further refined or tested as there could be some edge cases causing the user to be able to type outside of this alotted character width (copying and pasting with ENTER breakpoints)
 const insertLineBreaks = (text: string) => {
   const maxLength = 73;
   let result = '';

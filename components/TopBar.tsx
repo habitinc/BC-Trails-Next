@@ -1,3 +1,5 @@
+// Simple component to showcase a sort of NavBar for the application, unsure if conditional rendering is necessary for the logo to not appear on homepage, but for usabilty should appear universal on all screens user navigates within
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';

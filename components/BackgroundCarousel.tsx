@@ -1,9 +1,12 @@
+// Use client directive for any components or pages utilizing state or hooks such as useState, useEffect, useReducer, useContext, etc. This directive is not required for components that only use props and do not have any internal state or side effects.
 "use client";
 
 import { useEffect } from 'react';
 
 const BackgroundCarousel = () => {
     useEffect(() => {
+      
+      // Pulled from public/assets/images
       const images = [
         '/assets/images/mountain-biking.jpg',
         '/assets/images/hiking.jpg',

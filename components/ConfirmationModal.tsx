@@ -1,6 +1,7 @@
 // ConfirmationModal.tsx
 import React from 'react';
 
+// Booleans to handle modal state
 interface ConfirmationModalProps {
   isOpen: boolean;
   onConfirm: () => void;

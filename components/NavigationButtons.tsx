@@ -1,3 +1,5 @@
+// This component requires use of the ConfirmationModal.tsx component to dictate whether the user is sure of the selection when resetting
+
 "use client";
 
 // NavigationButtons.tsx
@@ -38,6 +40,9 @@ interface NavigationButtonsProps {
     return (
       <div className="navigation-buttons mt-4 flex flex-col items-center gap-2">
         <div className="flex justify-between w-full gap-1">
+          
+          {/* CustomButton.tsx component with applied type handling for each respective button */}
+          
           {/* Previous Button */}
           <CustomButton
             title="Back"

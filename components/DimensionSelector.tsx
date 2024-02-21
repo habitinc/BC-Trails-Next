@@ -2,12 +2,15 @@ import React from 'react';
 import { Listbox } from '@headlessui/react';
 import { DimensionProps, DimensionSelectorProps } from '@/types'; // Ensure the path is correct
 
+
+// DimensionSelector component includes types from /types/index.ts, can be further adjusted or refined from there
 const DimensionSelector: React.FC<DimensionSelectorProps> = ({
     dimensions,
     selectedDimension,
     onSelectDimension,
 }) => {
   return (
+    // This dropdown list uses Headless UI component. // https://headlessui.dev/react/listbox Additionally, these options may be changed to radial menus as request by the client, whatever works more efficiently for the user.
     <div className="relative"> {/* Ensure the dropdown list aligns with this container */}
     <p className='py-2 px-1'>Select Sign Dimensions</p>
       <Listbox value={selectedDimension} onChange={onSelectDimension}>

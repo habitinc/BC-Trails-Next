@@ -3,6 +3,8 @@ import DimensionSelector from './DimensionSelector';
 import SignTitle from './SignTitle';
 import { DimensionProps } from '@/types';
 
+
+// StepHandlerProps interface to define the expected props, can be adjusted as necessary, will need to be refined with each additional prop to handle the steps as the user progresses through sign creation
 interface StepHandlerProps {
   currentStep: number;
   handleDimensionSelect: (dimension: DimensionProps) => void;
@@ -44,6 +46,7 @@ const StepHandler: React.FC<StepHandlerProps> = ({
         );
       case 1:
         return (
+          // SignTitle component will eventually have a large number of props, attempt to keep line breaks as is to ensure readability and quick reference and editing capability
           <SignTitle
             trailName={trailName}
             setName={handleNameChange}
